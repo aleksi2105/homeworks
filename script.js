@@ -19,9 +19,9 @@ const showTypeOf = function (variable) {
 const getRollbackMessage = function (price) {
   if (price >= 30000) {
     return "Даем скидку в 10%";
-  } else if (price >= 15000 && fullPrice < 30000) {
+  } else if (price >= 15000 && price < 30000) {
     return "Даем скидку в 5%";
-  } else if (price >= 0 && fullPrice < 15000) {
+  } else if (price >= 0 && price < 15000) {
     return "Скидка не предусмотрена";
   } else {
     return "Что то пошло не так";
