@@ -13,6 +13,12 @@ let fullPrice = screenPrice + servicePrice1 + servicePrice2;
 let servicePercentPrice = Math.ceil(fullPrice - (fullPrice * (rollBack / 100)));
 let allServicePrices
 
+const getTitle = function () {
+  const str = title.trim();
+  if (!str) return "";
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
 const showTypeOf = function (variable) {
   console.log(variable, typeof variable);
 }
@@ -38,9 +44,11 @@ const getRollbackMessage = function (price) {
 }
 
 screens = screens.toLowerCase();
-
+title = getTitle();
 allServicePrices = getAllServicePrices();
 fullPrice = getFullPrice();
+
+console.log(title);
 
 console.log(allServicePrices);
 console.log(fullPrice);
