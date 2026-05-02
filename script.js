@@ -31,6 +31,10 @@ function getFullPrice() {
   return screenPrice + allServicePrices;
 }
 
+const getServicePercentPrices = function () {
+  return fullPrice - (fullPrice * (rollBack / 100));
+}
+
 const getRollbackMessage = function (price) {
   if (price >= 30000) {
     return "Даем скидку в 10%";
@@ -47,11 +51,12 @@ screens = screens.toLowerCase();
 title = getTitle();
 allServicePrices = getAllServicePrices();
 fullPrice = getFullPrice();
-
+servicePercentPrice = getServicePercentPrices();
 console.log(title);
 
 console.log(allServicePrices);
 console.log(fullPrice);
+console.log();
 
 console.log(getRollbackMessage(fullPrice));
 showTypeOf(title)
