@@ -52,29 +52,16 @@ title = getTitle();
 allServicePrices = getAllServicePrices();
 fullPrice = getFullPrice();
 servicePercentPrice = getServicePercentPrices();
-console.log(title);
 
-console.log(allServicePrices);
-console.log(fullPrice);
-console.log();
 
-console.log(getRollbackMessage(fullPrice));
 showTypeOf(title)
 showTypeOf(fullPrice)
 showTypeOf(adaptive)
 
-
-console.log(screens.length);
-console.log(servicePercentPrice);
-
-console.log("Стоимость верстки экранов" + " " + screenPrice + " " + "рублей/долларов/гривен/юани");
-console.log("Стоимость разработки сайта" + " " + fullPrice + " " + "рублей/долларов/гривен/юани");
-
-
-
 console.log(screens.split(", "));
+console.log(servicePercentPrice);
+console.log(getRollbackMessage(fullPrice));
 
-console.log("Процент отката посреднику за работу" + " " + fullPrice * (rollBack / 100));
 
 
 
