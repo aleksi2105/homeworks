@@ -19,12 +19,11 @@ const isNumber = function (num) {
 const asking = function () {
   title = prompt("Как называется ваш проект?", "Калькулятор верстки");
   screens = prompt("Какие типы экранов нужно разработать?", "Простые, Сложные, Интерактивные");
-  screenPrice = prompt("Сколько будет стоить данная работа?");
 
   do {
     screenPrice = prompt("Сколько будет стоить данная работа?");
   } while (!isNumber(screenPrice));
-
+  screenPrice = +screenPrice;
   adaptive = confirm("Нужен ли адаптив на сайте?");
 }
 
@@ -73,6 +72,7 @@ const getRollbackMessage = function (price) {
     return "Что то пошло не так";
   }
 }
+
 
 asking();
 screens = screens.toLowerCase();
