@@ -21,9 +21,9 @@ const asking = function () {
   screens = prompt("Какие типы экранов нужно разработать?", "Простые, Сложные, Интерактивные");
   screenPrice = prompt("Сколько будет стоить данная работа?");
 
-  while (!isNumber(screenPrice)) {
+  do {
     screenPrice = prompt("Сколько будет стоить данная работа?");
-  }
+  } while (!isNumber(screenPrice));
 
   adaptive = confirm("Нужен ли адаптив на сайте?");
 }
