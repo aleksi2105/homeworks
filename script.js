@@ -39,6 +39,7 @@ const showTypeOf = function (variable) {
 
 const getAllServicePrices = function () {
   let sum = 0;
+  let servicePrice;
 
   for (let i = 0; i < 2; i++) {
 
@@ -48,7 +49,16 @@ const getAllServicePrices = function () {
       service2 = prompt("Какой дополнительный тип услуги нужен?")
     }
 
-    sum += +prompt("Сколько это будет стоить?")
+    do {
+      servicePrice = prompt("Сколько это будет стоить?");
+
+      if (servicePrice === null) {
+        return sum;
+      }
+
+    } while (!isNumber(servicePrice));
+
+    sum += +servicePrice;
   };
   return sum;
 }
