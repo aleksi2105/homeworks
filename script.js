@@ -71,18 +71,27 @@ const appData = {
     } else {
       return "Что то пошло не так";
     }
+  },
+  logger: function () {
+    for (let key in appData) {
+      console.log(key, appData[key]);
+    }
+  },
+  start: function () {
+    appData.asking();
+    appData.screens = appData.screens.toLowerCase();
+    appData.title = appData.getTitle();
+    appData.allServicePrices = appData.getAllServicePrices();
+    appData.fullPrice = appData.getFullPrice();
+    appData.servicePercentPrice = appData.getServicePercentPrices();
+    appData.logger();
   }
+
 }
+appData.start();
 
-appData.asking();
-appData.screens = appData.screens.toLowerCase();
-appData.title = appData.getTitle();
-appData.allServicePrices = appData.getAllServicePrices();
-appData.fullPrice = appData.getFullPrice();
-appData.servicePercentPrice = appData.getServicePercentPrices();
 
-console.log(appData.fullPrice);
-console.log(appData.servicePercentPrice);
+
 
 
 
